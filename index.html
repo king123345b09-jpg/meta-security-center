@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ مَركز المُراجعة الرقمي | الرفيق الذكي</title>
+    <title>⚡ موقع المراجعة بتركيز </title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -78,12 +78,12 @@
 
     <div class="container" id="mainContainer">
         <div class="header">
-            <h1>⚡ مَركز المُراجعة الرقمي الخارق</h1>
+            <h1>⚡ موقع المراجعة الشامل</h1>
         </div>
 
         <!-- الخطوة 1: طلب الاسم -->
         <div class="step-panel active" id="step1">
-            <label for="userName">مرحباً بك يا بطل! واش هو اسمك؟</label>
+            <label for="userName">السلام علكم! واش اسمك؟</label>
             <input type="text" id="userName" class="input-field" placeholder="اكتب اسمك هنا..." autocomplete="off">
             <div style="text-align: center;">
                 <button class="action-btn" onclick="goToStep2()">التالي ➡️</button>
@@ -92,7 +92,7 @@
 
         <!-- الخطوة 2: تحديد وقت الدراسة اليومي -->
         <div class="step-panel" id="step2">
-            <label id="timeLabel">شحال من ساعة حاب تراجع وتدرس اليوم؟</label>
+            <label id="timeLabel">شحال من ساعة تستطيع تخصيصها للمراجعة؟</label>
             <input type="number" id="studyHours" class="input-field" placeholder="مثال: 3" min="1" max="24">
             <div style="text-align: center; display: flex; gap: 15px; justify-content: center;">
                 <button class="action-btn" style="background:#1E293B; color:#FFF;" onclick="switchPanel(2,1)">رجوع</button>
@@ -117,9 +117,9 @@
             <div class="dashboard">
                 <!-- قسم أهداف اليوم (To-Do List) -->
                 <div class="panel-box">
-                    <h2>🎯 أهداف اليوم الدراسية</h2>
+                    <h2>🎯 أهداف اليوم</h2>
                     <div class="todo-input-group">
-                        <input type="text" id="todoInput" class="todo-input" placeholder="مثال: حل موضوع فيزياء بيم..." onkeypress="if(event.key === 'Enter') addTodo()">
+                        <input type="text" id="todoInput" class="todo-input" placeholder="مثال: حل موضوع فيزياء بيام..." onkeypress="if(event.key === 'Enter') addTodo()">
                         <button class="add-todo-btn" onclick="addTodo()">إضافة</button>
                     </div>
                     <ul class="todo-list" id="todoList">
@@ -173,7 +173,7 @@
 
         function initializeDashboard() {
             let hours = parseInt(document.getElementById("studyHours").value);
-            if(isNaN(hours) || hours <= 0) { alert("يرجى إدخال عدد ساعات حقيقي ومناسب!"); return; }
+            if(isNaN(hours) || hours <= 0) { alert("يرجى إدخال عدد ساعات حقيقي!"); return; }
             sessionData.hours = hours;
             
             saveToMemory();
@@ -326,7 +326,7 @@
         }
 
         function resetEverything() {
-            if(confirm("هل تريد تصفير اللوحة وإدخال معلومات يوم جديد؟")) {
+            if(confirm("هل راك باغي دخل معلومات جديدة؟")) {
                 localStorage.removeItem(storageKey);
                 resetTimer();
                 document.getElementById("userName").value = "";
