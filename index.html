@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع المناقل</title>
+    <title>موقع المناقيل</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* تصميم الواجهة على طراز المنصات الرسمية */
         :root {
             --primary: #0f172a; /* كحلي ملكي عميق */
             --accent: #2563eb;  /* أزرق حيوي */
-            --bg: #f8fafc;      /* خلفية هادئة مريحة للعين */
+            --bg: #f8fafc;      /* خلفية هادئة */
             --text: #334155;
         }
 
@@ -32,7 +31,6 @@
             padding: 20px;
         }
 
-        /* حاوية الكرت الرئيسي */
         .main-card {
             background: white;
             border-radius: 24px;
@@ -44,28 +42,20 @@
             transition: all 0.4s ease;
         }
 
-        /* هيدر يشبه مواقع حساب النتائج */
+        /* الهيدر بعد حذف القبعة */
         .card-header {
             background: linear-gradient(135deg, var(--primary), #1e293b);
-            padding: 25px;
+            padding: 30px 25px;
             text-align: center;
             color: white;
-            position: relative;
-        }
-
-        .card-header i {
-            font-size: 32px;
-            color: #38bdf8;
-            margin-bottom: 10px;
         }
 
         .card-header h1 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             letter-spacing: 0.5px;
         }
 
-        /* منطقة المحتوى والصورة */
         .card-body {
             padding: 30px;
             text-align: center;
@@ -94,7 +84,6 @@
             margin-bottom: 25px;
         }
 
-        /* مجموعة الأزرار التفاعلية */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -140,7 +129,6 @@
             background-color: #e2e8f0;
         }
 
-        /* شاشات النتيجة وزر العودة */
         .result-panel {
             display: none;
             padding: 20px;
@@ -149,6 +137,7 @@
             font-weight: 600;
             margin-top: 5px;
             animation: slideUp 0.4s ease forwards;
+            line-height: 1.6;
         }
 
         @keyframes slideUp {
@@ -163,9 +152,9 @@
         }
 
         .info-panel {
-            background-color: #f8fafc;
-            color: var(--primary);
-            border: 1px solid #e2e8f0;
+            background-color: #fefce8;
+            color: #854d0e;
+            border: 1px solid #fef08a;
         }
 
         .btn-back {
@@ -190,8 +179,7 @@
 
     <div class="main-card">
         <div class="card-header">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <h1> !هل تعرفهم ولالا</h1>
+            <h1>موقع المناقيل </h1>
         </div>
 
         <div class="card-body">
@@ -200,49 +188,47 @@
             </div>
 
             <div id="quiz-section">
-                <p class="question-text">تعرف هاذو لي راهم في التصويرة؟</p>
+                <p class="question-text">هل تعرف هاذو المناقيل لي في التصويرة؟</p>
                 <div class="btn-group">
                     <button class="btn btn-yes" onclick="processSelection('yes')">
-                        <i class="fa-solid fa-user-check"></i> نعم، نعرفهم
+                        <i class="fa-solid fa-user-check"></i> واه، نعرفهم
                     </button>
                     <button class="btn btn-no" onclick="processSelection('no')">
-                        <i class="fa-solid fa-user-xmark"></i>لا، مانعرفهمش
+                        <i class="fa-solid fa-user-xmark"></i> لا، مانعرفهمش
                     </button>
                 </div>
             </div>
 
             <div id="result-section" class="hidden">
-                <div id="panel-box" class="result-panel">
-                    </div>
+                <div id="panel-box" class="result-panel"></div>
                 
                 <button class="btn btn-back" onclick="returnToStart()">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i> عودة
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> عودة 
                 </button>
             </div>
         </div>
     </div>
 
     <script>
-        // دالة معالجة ضغط الأزرار بنقاء وجمالية
         function processSelection(status) {
             const quizSection = document.getElementById('quiz-section');
             const resultSection = document.getElementById('result-section');
             const panelBox = document.getElementById('panel-box');
 
-            // إخفاء السؤال وإظهار صندوق النتيجة
             quizSection.classList.add('hidden');
             resultSection.classList.remove('hidden');
 
             if (status === 'yes') {
+                // النص الذي يظهر عند الضغط على نعم
                 panelBox.className = "result-panel success-panel";
-                panelBox.innerHTML = "<i class='fa-solid fa-circle-check' style='margin-left:8px;'></i> أحسنت! هما صديقاك المقربان وعزوتك دائماً في مسيرتك.";
+                panelBox.innerHTML = "<i class='fa-solid fa-circle-check' style='margin-left:8px;'></i> مليحا خويا هذو عبدو ومحمد الكحانيني اللي يضلو يعطو  .";
             } else {
+                // النص الذي يظهر عند الضغط على لا
                 panelBox.className = "result-panel info-panel";
-                panelBox.innerHTML = "<i class='fa-solid fa-circle-info' style='margin-left:8px;'></i> هذان الشخصان في الصورة هما <strong>عبدو وهيثم</strong>.";
+                panelBox.innerHTML = "<i class='fa-solid fa-circle-info' style='margin-left:8px;'></i> مليح كيما تعرفهم بصح مادورش معاهم لاقابش مناقل!";
             }
         }
 
-        // دالة زر الرجوع لإعادة تفعيل الواجهة
         function returnToStart() {
             document.getElementById('quiz-section').classList.remove('hidden');
             document.getElementById('result-section').classList.add('hidden');
