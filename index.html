@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع المناقيل</title>
+    <title>موقع المانقيل</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -42,7 +42,6 @@
             transition: all 0.4s ease;
         }
 
-        /* الهيدر بعد حذف القبعة */
         .card-header {
             background: linear-gradient(135deg, var(--primary), #1e293b);
             padding: 30px 25px;
@@ -146,15 +145,15 @@
         }
 
         .success-panel {
-            background-color: #f0fdf4;
-            color: #166534;
-            border: 1px solid #bbf7d0;
-        }
-
-        .info-panel {
             background-color: #fefce8;
             color: #854d0e;
             border: 1px solid #fef08a;
+        }
+
+        .info-panel {
+            background-color: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
         }
 
         .btn-back {
@@ -179,7 +178,7 @@
 
     <div class="main-card">
         <div class="card-header">
-            <h1>موقع المناقيل </h1>
+            <h1>منصة التحقق من الأصدقاء</h1>
         </div>
 
         <div class="card-body">
@@ -188,13 +187,13 @@
             </div>
 
             <div id="quiz-section">
-                <p class="question-text">هل تعرف هاذو المناقيل لي في التصويرة؟</p>
+                <p class="question-text">هتعرف هاذو المناقيل ولا لا؟</p>
                 <div class="btn-group">
                     <button class="btn btn-yes" onclick="processSelection('yes')">
-                        <i class="fa-solid fa-user-check"></i> واه، نعرفهم
+                        <i class="fa-solid fa-user-check"></i> واه نعرفهم
                     </button>
                     <button class="btn btn-no" onclick="processSelection('no')">
-                        <i class="fa-solid fa-user-xmark"></i> لا، مانعرفهمش
+                        <i class="fa-solid fa-user-xmark"></i> لا مانعرفهمش
                     </button>
                 </div>
             </div>
@@ -203,7 +202,7 @@
                 <div id="panel-box" class="result-panel"></div>
                 
                 <button class="btn btn-back" onclick="returnToStart()">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i> عودة 
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> عودة للخلف
                 </button>
             </div>
         </div>
@@ -219,13 +218,13 @@
             resultSection.classList.remove('hidden');
 
             if (status === 'yes') {
-                // النص الذي يظهر عند الضغط على نعم
+                // النص الذي يظهر للجميع عند الضغط على زر "نعم"
                 panelBox.className = "result-panel success-panel";
-                panelBox.innerHTML = "<i class='fa-solid fa-circle-check' style='margin-left:8px;'></i> مليحا خويا هذو عبدو ومحمد الكحانيني اللي يضلو يعطو  .";
+                panelBox.innerHTML = "<i class='fa-solid fa-user-group' style='margin-left:8px;'></i>مليح هاذو هوما المناقيل الطحانين لي يضل يعطو هههههههه!";
             } else {
-                // النص الذي يظهر عند الضغط على لا
+                // النص الذي يظهر للجميع عند الضغط على زر "لا"
                 panelBox.className = "result-panel info-panel";
-                panelBox.innerHTML = "<i class='fa-solid fa-circle-info' style='margin-left:8px;'></i> مليح كيما تعرفهم بصح مادورش معاهم لاقابش مناقل!";
+                panelBox.innerHTML = "<i class='fa-solid fa-circle-info' style='margin-left:8px;'></i>هاذو هوما عبدو ومحمد إذا صتهم مادورش معاهم";
             }
         }
 
